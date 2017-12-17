@@ -30,7 +30,24 @@ class ContactListController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
         
         let contact = contacts[indexPath.row]
+        cell.textLabel?.text = contact.firstName
+        cell.detailTextLabel?.text = contact.lastName
+        cell.imageView?.image = contact.image
         
         return cell
+    }
+    
+    // MARK: - Segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier != "showDetail" { return }
+        
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        
+        guard let destination = segue.destination as? UINavigationController, let destinationVC = destination.topViewController as? ContactDetailController else {
+            return
+        }
+        
+        destinationVC.contact = contacts[indexPath.row]
     }
 }

@@ -21,6 +21,7 @@ class ContactDetailController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureView()
     }
     
     func configureView() {
