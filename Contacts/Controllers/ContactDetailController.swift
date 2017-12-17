@@ -11,6 +11,9 @@ import UIKit
 class ContactDetailController: UITableViewController {
     var contact: Contact?
     
+    @IBOutlet weak var profilePictureView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    
     @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     
@@ -26,6 +29,9 @@ class ContactDetailController: UITableViewController {
     
     func configureView() {
         guard let contact = contact else { return }
+        
+        profilePictureView.image = contact.image
+        nameLabel.text = "\(contact.firstName) \(contact.lastName)"
         
         phoneNumberLabel.text = contact.phone
         emailLabel.text = contact.email
