@@ -13,6 +13,9 @@
 		4A90BC561FE339DE00B71C31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A90BC541FE339DE00B71C31 /* Main.storyboard */; };
 		4A90BC581FE339DE00B71C31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A90BC571FE339DE00B71C31 /* Assets.xcassets */; };
 		4A90BC5B1FE339DE00B71C31 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4A90BC591FE339DE00B71C31 /* LaunchScreen.storyboard */; };
+		4AC2982E1FE60C5B0050B83D /* ContactsDB.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AC2982D1FE60C5B0050B83D /* ContactsDB.plist */; };
+		4AC298301FE60C6A0050B83D /* ContactsReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC2982F1FE60C6A0050B83D /* ContactsReader.swift */; };
+		4AC298331FE60DB90050B83D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC298321FE60DB90050B83D /* Contact.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		4A90BC571FE339DE00B71C31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A90BC5A1FE339DE00B71C31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4A90BC5C1FE339DE00B71C31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AC2982D1FE60C5B0050B83D /* ContactsDB.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContactsDB.plist; sourceTree = "<group>"; };
+		4AC2982F1FE60C6A0050B83D /* ContactsReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsReader.swift; sourceTree = "<group>"; };
+		4AC298321FE60DB90050B83D /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		4A90BC4D1FE339DE00B71C31 /* Contacts */ = {
 			isa = PBXGroup;
 			children = (
+				4AC298311FE60DAF0050B83D /* Model */,
 				4A90BC4E1FE339DE00B71C31 /* AppDelegate.swift */,
 				4A90BC501FE339DE00B71C31 /* MasterViewController.swift */,
 				4A90BC521FE339DE00B71C31 /* DetailViewController.swift */,
@@ -63,8 +70,18 @@
 				4A90BC571FE339DE00B71C31 /* Assets.xcassets */,
 				4A90BC591FE339DE00B71C31 /* LaunchScreen.storyboard */,
 				4A90BC5C1FE339DE00B71C31 /* Info.plist */,
+				4AC2982D1FE60C5B0050B83D /* ContactsDB.plist */,
+				4AC2982F1FE60C6A0050B83D /* ContactsReader.swift */,
 			);
 			path = Contacts;
+			sourceTree = "<group>";
+		};
+		4AC298311FE60DAF0050B83D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4AC298321FE60DB90050B83D /* Contact.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -129,6 +146,7 @@
 				4A90BC5B1FE339DE00B71C31 /* LaunchScreen.storyboard in Resources */,
 				4A90BC581FE339DE00B71C31 /* Assets.xcassets in Resources */,
 				4A90BC561FE339DE00B71C31 /* Main.storyboard in Resources */,
+				4AC2982E1FE60C5B0050B83D /* ContactsDB.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A90BC531FE339DE00B71C31 /* DetailViewController.swift in Sources */,
+				4AC298301FE60C6A0050B83D /* ContactsReader.swift in Sources */,
+				4AC298331FE60DB90050B83D /* Contact.swift in Sources */,
 				4A90BC511FE339DE00B71C31 /* MasterViewController.swift in Sources */,
 				4A90BC4F1FE339DE00B71C31 /* AppDelegate.swift in Sources */,
 			);
