@@ -32,7 +32,8 @@ extension ContactsSource {
 
 class ContactListController: UITableViewController {
     
-    var contacts = ContactsSource.contacts
+    let sectionTitles = ContactsSource.uniqueFirstLetters
+    let contacts = ContactsSource.sectionedContacts
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,18 +41,26 @@ class ContactListController: UITableViewController {
 
     // MARK: - Table view data source
     
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return sectionTitles[section]
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return sectionTitles
+    }
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return contacts.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contacts.count
+        return contacts[section].count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ContactCell", for: indexPath)
         
-        let contact = contacts[indexPath.row]
+        let contact = contacts[indexPath.section][indexPath.row]
         cell.textLabel?.text = contact.firstName
         cell.detailTextLabel?.text = contact.lastName
         cell.imageView?.image = contact.image
@@ -70,6 +79,6 @@ class ContactListController: UITableViewController {
             return
         }
         
-        destinationVC.contact = contacts[indexPath.row]
+        destinationVC.contact = contacts[indexPath.section][indexPath.row]
     }
 }
