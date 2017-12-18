@@ -21,6 +21,13 @@ extension ContactsSource {
         
         return Array(uniqueFirstLetters).sorted()
     }
+    
+    static var sectionedContacts: [[Contact]] {
+        return uniqueFirstLetters.map { firstLetter in
+            let filteredContact = contacts.filter { $0.firstLetterForSort == firstLetter }
+            return filteredContact.sorted(by: { $0.firstName < $1.firstName })
+        }
+    }
 }
 
 class ContactListController: UITableViewController {
