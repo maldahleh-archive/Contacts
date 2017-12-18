@@ -8,6 +8,21 @@
 
 import UIKit
 
+extension Contact {
+    var firstLetterForSort: String {
+        return String(firstName.first!).uppercased()
+    }
+}
+
+extension ContactsSource {
+    static var uniqueFirstLetters: [String] {
+        let firstLetters = contacts.map { $0.firstLetterForSort }
+        let uniqueFirstLetters = Set(firstLetters)
+        
+        return Array(uniqueFirstLetters).sorted()
+    }
+}
+
 class ContactListController: UITableViewController {
     
     var contacts = ContactsSource.contacts
